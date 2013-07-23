@@ -18,3 +18,19 @@ asciidoctor:
     idseparator: '-'
     sectanchors: ''
     icons: font
+profiles:
+  development:
+    deploy:
+      dummy:
+  production:
+    base_url: http://clonezone.github.io/writeadapt-clonezone
+    ctx_path: /writeadapt-clonezone
+    asciidoctor:
+      :attributes:
+        base_url: http://clonezone.github.io/writeadapt-clonezone
+        ctx_path: /writeadapt-clonezone
+        # imagesdir must be absolute to work around Atom feed bug
+        imagesdir: http://clonezone.github.io/writeadapt-clonezone/images
+    deploy:
+      host: github_pages
+      branch: gh-pages
